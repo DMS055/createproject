@@ -199,6 +199,8 @@ goto end
 
 :WEB
 :: TODO, as there is some work to be done here
+:: Make a choice between react and general (maybe svelte?) 
+:: Prob other stuff in the future
 ECHO TEST
 goto end
 
