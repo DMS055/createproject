@@ -27,7 +27,7 @@ if '%choice%'=='7' goto WEB
 
 :: If proper syntax is not provided
 cls
-ECHO "%choice%" is not valid, try again.
+ECHO "%choice%" is not a valid choice, try again.
 ECHO.
 goto start
 
@@ -213,10 +213,117 @@ goto end
 
 
 :WEB
-:: TODO, as there is some work to be done here
-:: Make a choice between react and general (maybe svelte?) 
-:: Prob other stuff in the future
-ECHO TEST
+:: Add:
+:: FunStuff
+:: React
+:: Misc
+cls
+
+ECHO 1. FunStuff
+ECHO 2. React
+ECHO 3. Miscellaneous
+
+ECHO Select the subdirectory by typing in the corresponding number:
+set /p choice=
+ECHO %choice%
+if not '%choice%'=='' set choice=%choice:~0,2%
+if '%choice%'=='1' goto FS
+if '%choice%'=='2' goto RCT
+if '%choice%'=='3' goto MS
+
+:: If proper syntax is not provided
+goto :WEB
+
+:FS
+cls
+:: Setup
+ECHO Creating a Web App
+cd C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff
+
+:: Project name
+ECHO Select the project name.
+set /p name=
+ECHO %name%
+
+:: Create directory and cd to it
+mkdir %name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
+:: Project setup
+type nul >main.html
+type nul >style.css
+type nul >script.js
+
+cls
+set text="Created 'main.html', 'style.css' and 'script.js' as a project setup."
+set text=%text:"=%
+ECHO %text%
+
+:: Open in VSCode
+cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
+goto end
+
+
+:RCT
+cls
+:: Setup
+ECHO Creating a React App
+cd C:\Users\thebe\Desktop\Codingstuff\WebDev\React
+
+:: Project name
+ECHO Select the project name.
+set /p name=
+ECHO %name%
+
+:: Create directory and cd to it
+mkdir %name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+:: Project setup
+type nul >main.html
+type nul >style.css
+type nul >script.js
+
+cls
+set text="Created a React project setup."
+set text=%text:"=%
+ECHO %text%
+
+:: Open in VSCode
+cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
+goto end
+
+
+:MS
+cls
+:: Setup
+ECHO Creating a Web App
+cd C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc
+
+:: Project name
+ECHO Select the project name.
+set /p name=
+ECHO %name%
+
+:: Create directory and cd to it
+mkdir %name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
+:: Project setup
+type nul >main.html
+type nul >style.css
+type nul >script.js
+
+cls
+set text="Created 'main.html', 'style.css' and 'script.js' as a project setup."
+set text=%text:"=%
+ECHO %text%
+
+:: Open in VSCode
+cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
@@ -245,5 +352,8 @@ for /l %%G in (1,1,3) do (
 ::timeout /t 2 /nobreak > nul
 cls
 ECHO Project successfully created!
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
+ECHO.
+ECHO Bye!
+timeout /t 1 /nobreak > nul
 exit
