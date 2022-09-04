@@ -53,6 +53,8 @@ ECHO Opening project...
 
 :: Open in VSCode
 cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
@@ -83,6 +85,8 @@ ECHO Opening project...
 
 :: Open in VSCode
 cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
@@ -112,6 +116,8 @@ ECHO Opening project...
 
 :: Open in VSCode
 cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
@@ -141,6 +147,8 @@ ECHO Opening project...
 
 :: Open in VSCode
 cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
@@ -199,6 +207,8 @@ ECHO Opening project...
 
 :: Open in VSCode
 cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
