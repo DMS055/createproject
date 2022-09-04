@@ -47,8 +47,11 @@ ECHO %name1%
 mkdir %name1%
 chdir C:\Users\thebe\Desktop\Codingstuff\Batch, VBS\%name1%
 
+cls
+ECHO Opening project...
+
 :: Open in VSCode
-cmd /k "code ."
+cmd /c "code ."
 goto end
 
 
@@ -66,6 +69,7 @@ ECHO %name1%
 :: Create directory and cd to it
 mkdir %name1%
 chdir C:\Users\thebe\Desktop\Codingstuff\C\%name1%
+
 :: Project setup
 type nul >index.c
 cls
@@ -206,6 +210,7 @@ goto end
 
 
 :end
+:: Yes, this is hardcoded and I am not ashamed of that
 timeout /t 3 /nobreak > nul
 cls
 ECHO Project successfully created!
