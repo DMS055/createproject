@@ -4,7 +4,6 @@ cls
 :start
 
 :: Options menu
-ECHO.
 ECHO 1. Batch, VBS
 ECHO 2. C
 ECHO 3. C++
@@ -26,16 +25,18 @@ if '%choice%'=='5' goto JV
 if '%choice%'=='6' goto PY
 if '%choice%'=='7' goto WEB
 
-:: If proper syntaxt is not provided
+:: If proper syntax is not provided
 cls
 ECHO "%choice%" is not valid, try again.
+ECHO.
 goto start
 
 :: Commands
+
 :BVBS
 cls
 :: Setup
-ECHO Batch/VBS Project
+ECHO Creating a Batch/VBS Project
 cd C:\Users\thebe\Desktop\Codingstuff\Batch, VBS
 
 :: Project name
@@ -58,7 +59,7 @@ goto end
 :C
 cls
 :: Setup
-ECHO C Project
+ECHO Creating a C Project
 cd C:\Users\thebe\Desktop\Codingstuff\C
 
 :: Project name
@@ -88,7 +89,7 @@ goto end
 :CPP
 cls
 :: Setup
-ECHO C++ Project
+ECHO Creating a C++ Project
 cd C:\Users\thebe\Desktop\Codingstuff\C++
 
 :: Project name
@@ -117,7 +118,7 @@ goto end
 :DJS
 cls
 :: Setup
-ECHO Discord.js Project
+ECHO Creating a Discord.js Project
 cd C:\Users\thebe\Desktop\Codingstuff\DJS
 
 :: Project name
@@ -146,7 +147,7 @@ goto end
 :JV
 cls
 :: Setup
-ECHO Java Project
+ECHO Creating a Java Project
 cd C:\Users\thebe\Desktop\Codingstuff\Java
 
 :: Project name
@@ -159,23 +160,23 @@ mkdir %name%
 chdir C:\Users\thebe\Desktop\Codingstuff\Java\%name%
 :: Project setup
 type nul >index.java
+
 cls
 set text="Created 'index.java' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
-ECHO.
-ECHO Opening project...
-
 :: Open in VSCode
 cmd /c "code ."
+call :loading
+timeout /t 4 /nobreak > nul
 goto end
 
 
 :PY
 cls
 :: Setup
-ECHO Python Project
+ECHO Creating a Python Project
 cd C:\Users\thebe\Desktop\Codingstuff\Python
 
 :: Project name
@@ -209,10 +210,30 @@ ECHO TEST
 goto end
 
 
+:loading
+setlocal enabledelayedexpansion
+set /a times=1
+for /l %%G in (1, 1, %times%) do (
+	call :display "Opening project"
+)
+
+setlocal disabledelayedexpansion
+cls
+
+:display
+set string=%1
+set string=%string:"=%
+set dots=...
+
+for /l %%G in (1,1,3) do (
+	cls
+	ECHO !string!!dots:~0,%%G!
+	ping localhost -n 2 -w 500 -l 5000 > NUL
+)
+
 :end
-:: Yes, this is hardcoded and I am not ashamed of that
-timeout /t 3 /nobreak > nul
+::timeout /t 2 /nobreak > nul
 cls
 ECHO Project successfully created!
-ECHO.
-pause
+timeout /t 4 /nobreak > nul
+exit
