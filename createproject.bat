@@ -213,10 +213,6 @@ goto end
 
 
 :WEB
-:: Add:
-:: FunStuff
-:: React
-:: Misc
 cls
 
 ECHO 1. FunStuff
@@ -279,10 +275,21 @@ ECHO %name%
 :: Create directory and cd to it
 mkdir %name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+
+cls
+ECHO Creating a React App. It might take a couple minutes.
+timeout /t 3 /nobreak > nul
+
 :: Project setup
-type nul >main.html
-type nul >style.css
-type nul >script.js
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\React\template C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+cls
+cmd /c "npm init -y"
+cls
+cmd /c "npm install react react-dom"
+cls
+cmd /c "npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader"
+cls
+cmd /c "npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader file-loader"
 
 cls
 set text="Created a React project setup."
@@ -291,7 +298,6 @@ ECHO %text%
 
 :: Open in VSCode
 cmd /c "code ."
-call :loading
 timeout /t 4 /nobreak > nul
 goto end
 
