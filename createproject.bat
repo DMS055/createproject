@@ -282,19 +282,37 @@ timeout /t 3 /nobreak > nul
 
 :: Project setup
 xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\React\template C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+type nul > INFO.md
+(
+	ECHO Paste the following lines into package.json:
+	ECHO '"main": "webpack.config.js",'
+	ECHO '"scripts": {'
+	ECHO '	"test": "echo \"Error: no test specified\" && exit 1",'
+	ECHO '	"start": "webpack-dev-server --mode=development --open --hot",'
+	ECHO '	"build": "webpack --mode=production"'
+	ECHO '},'
+	ECHO.
+	ECHO.
+	ECHO "ctrl + shift + h and replaced all instances of ' with whitespace character (in this file only)"
+	ECHO.
+	ECHO 'First off, run "npm run build" on your main directory, then run "npm run start" and you are ready to go!'
+) >> C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%\INFO.md
+
+::timeout /t 2 /nobreak > nul
+
+:: In steps, so if something breaks then it's possible to catch the error-causing depedencies
 cls
 cmd /c "npm init -y"
 cls
 cmd /c "npm install react react-dom"
 cls
-cmd /c "npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader"
+cmd /c "npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader dotenv-webpack"
 cls
 cmd /c "npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader file-loader"
 
 cls
-set text="Created a React project setup."
-set text=%text:"=%
-ECHO %text%
+ECHO Created a React project setup. Read INFO.md!
 
 :: Open in VSCode
 cmd /c "code ."
