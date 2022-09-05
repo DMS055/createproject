@@ -137,6 +137,12 @@ mkdir %name%
 chdir C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
 :: Project setup
 type nul >bot.js
+
+cls
+cmd /c "npm init -y"
+cls
+cmd /c "npm install discord.js"
+
 cls
 set text="Created 'bot.js' as a project setup."
 set text=%text:"=%
@@ -255,10 +261,10 @@ set text=%text:"=%
 ECHO %text%
 
 :: Open in VSCode
-cmd /c "code ."
-call :loading
-timeout /t 4 /nobreak > nul
-goto end
+	cmd /c "code ."
+	call :loading
+	timeout /t 4 /nobreak > nul
+	goto end
 
 
 :RCT
