@@ -222,16 +222,18 @@ goto end
 cls
 
 ECHO 1. FunStuff
-ECHO 2. React
-ECHO 3. Miscellaneous
+ECHO 2. Next (TS)
+ECHO 3. React (JS)
+ECHO 4. Miscellaneous
 
 ECHO Select the subdirectory by typing in the corresponding number:
 set /p choice=
 ECHO %choice%
 if not '%choice%'=='' set choice=%choice:~0,2%
 if '%choice%'=='1' goto FS
-if '%choice%'=='2' goto RCT
-if '%choice%'=='3' goto MS
+if '%choice%'=='2' goto NXT
+if '%choice%'=='3' goto RCT
+if '%choice%'=='4' goto MS
 
 :: If proper syntax is not provided
 goto :WEB
@@ -265,6 +267,41 @@ ECHO %text%
 	call :loading
 	timeout /t 4 /nobreak > nul
 	goto end
+
+:NXT
+cls
+:: Setup
+ECHO Creating a Next App
+cd C:\Users\thebe\Desktop\Codingstuff\WebDev\Next
+
+:: Project name
+ECHO Select the project name.
+set /p name=
+ECHO %name%
+
+:: Create directory and cd to it
+mkdir %name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+
+cls
+ECHO Creating a Next App. It might take a couple minutes.
+timeout /t 3 /nobreak > nul
+
+:: Project setup
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\nextTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+
+:: In steps, so if something breaks then it's possible to catch the error-causing depedencies
+cls
+cmd /c "yarn add next @types/react"
+
+cls
+ECHO Created a Next project setup. Read README.md!
+
+:: Open in VSCode
+cmd /c "code ."
+timeout /t 4 /nobreak > nul
+goto end
 
 
 :RCT
