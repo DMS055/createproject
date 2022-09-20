@@ -138,6 +138,7 @@ chdir C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
 :: Project setup
 type nul >bot.js
 
+
 cls
 cmd /c "npm init -y"
 cls
@@ -251,7 +252,9 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >main.html
 type nul >style.css
@@ -289,7 +292,9 @@ timeout /t 3 /nobreak > nul
 
 :: Project setup
 xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\nextTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
 
 :: In steps, so if something breaks then it's possible to catch the error-causing depedencies
 cls
@@ -376,7 +381,10 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
+
 :: Project setup
 type nul >main.html
 type nul >style.css
