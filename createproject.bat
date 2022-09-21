@@ -54,7 +54,7 @@ ECHO Opening project...
 :: Open in VSCode
 cmd /c "code ."
 call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -71,13 +71,13 @@ ECHO %name1%
 
 :: Create directory and cd to it
 mkdir %name1%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\C\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\C\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\C\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >index.c
 cls
-set text="Created 'index.c' as a project setup."
+set text="Generated 'index.c' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
@@ -87,7 +87,7 @@ ECHO Opening project...
 :: Open in VSCode
 cmd /c "code ."
 call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -104,14 +104,14 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\C++\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\C++\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\C++\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >index.cpp
 
 cls
-set text="Created 'index.cpp' as a project setup."
+set text="Generated 'index.cpp' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
@@ -121,7 +121,7 @@ ECHO Opening project...
 :: Open in VSCode
 cmd /c "code ."
 call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -138,7 +138,7 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 
@@ -151,7 +151,7 @@ cls
 cmd /c "npm install discord.js"
 
 cls
-set text="Created 'bot.js' as a project setup."
+set text="Generated 'bot.js' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
@@ -161,7 +161,7 @@ ECHO Opening project...
 :: Open in VSCode
 cmd /c "code ."
 call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -178,21 +178,21 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\Java\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\Java\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\Java\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >index.java
 
 cls
-set text="Created 'index.java' as a project setup."
+set text="Generated 'index.java' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
 :: Open in VSCode
 cmd /c "code ."
 call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -209,14 +209,14 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\Python\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\Python\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\Python\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 
 :: Project setup
 type nul >main.py
 cls
-set text="Created 'main.py' as a project setup."
+set text="Generated 'main.py' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
@@ -226,7 +226,7 @@ ECHO Opening project...
 :: Open in VSCode
 cmd /c "code ."
 call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -234,18 +234,18 @@ goto end
 cls
 
 ECHO 1. FunStuff
-ECHO 2. Next (TS)
-ECHO 3. React (JS)
-ECHO 4. Miscellaneous
+ECHO 2. Miscellaneous
+ECHO 3. Next (TS)
+ECHO 4. React (JS)
 
 ECHO Select the subdirectory by typing in the corresponding number:
 set /p choice=
 ECHO %choice%
 if not '%choice%'=='' set choice=%choice:~0,2%
 if '%choice%'=='1' goto FS
-if '%choice%'=='2' goto NXT
-if '%choice%'=='3' goto RCT
-if '%choice%'=='4' goto MS
+if '%choice%'=='2' goto MS
+if '%choice%'=='3' goto NXT
+if '%choice%'=='4' goto RCT
 
 :: If proper syntax is not provided
 goto :WEB
@@ -263,24 +263,56 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
+
 :: Project setup
-type nul >main.html
-type nul >style.css
-type nul >script.js
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\templates\vanillaTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\FunStuff\%name%
 
 cls
-set text="Created 'main.html', 'style.css' and 'script.js' as a project setup."
+set text="Generated 'main.html', 'style.css' and 'script.js' as a project setup."
 set text=%text:"=%
 ECHO %text%
 
 :: Open in VSCode
-	cmd /c "code ."
-	call :loading
-	timeout /t 4 /nobreak > nul
-	goto end
+cmd /c "code ."
+call :loading
+timeout /t 3 /nobreak > nul
+goto end
+
+
+:MS
+cls
+:: Setup
+ECHO Creating a Web App
+cd C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc
+
+:: Project name
+ECHO Select the project name.
+set /p name=
+ECHO %name%
+
+:: Create directory and cd to it
+mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
+chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
+
+:: Project setup
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\templates\vanillaTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
+
+cls
+set text="Generated 'main.html', 'style.css' and 'script.js' as a project setup."
+set text=%text:"=%
+ECHO %text%
+
+:: Open in VSCode
+cmd /c "code ."
+call :loading
+timeout /t 3 /nobreak > nul
+goto end
+
 
 :NXT
 cls
@@ -298,12 +330,12 @@ mkdir %name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
 
 cls
-ECHO Creating a Next App. It might take a couple minutes.
+ECHO Creating a Next App. This might take a couple minutes.
 timeout /t 3 /nobreak > nul
 
 :: Project setup
-xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\nextTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\templates\nextTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 
@@ -313,11 +345,11 @@ cls
 cmd /c "yarn add next @types/react"
 
 cls
-ECHO Created a Next project setup. Read README.md!
+ECHO Generated a Next project setup. Read README.md!
 
 :: Open in VSCode
 cmd /c "code ."
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -337,12 +369,12 @@ mkdir %name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
 
 cls
-ECHO Creating a React App. It might take a couple minutes.
+ECHO Creating a React App. This might take a couple minutes.
 timeout /t 3 /nobreak > nul
 
 :: Project setup
-xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\React\template C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\templates\reactTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\templates\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 
@@ -376,45 +408,11 @@ cls
 cmd /c "npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin style-loader css-loader file-loader"
 
 cls
-ECHO Created a React project setup. Read INFO.md!
+ECHO Generated a React project setup. Read INFO.md!
 
 :: Open in VSCode
 cmd /c "code ."
-timeout /t 4 /nobreak > nul
-goto end
-
-
-:MS
-cls
-:: Setup
-ECHO Creating a Web App
-cd C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc
-
-:: Project name
-ECHO Select the project name.
-set /p name=
-ECHO %name%
-
-:: Create directory and cd to it
-mkdir %name%
-copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
-chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Misc\%name%
-rename "workspace.code-workspace" "%name%.code-workspace"
-
-:: Project setup
-type nul >main.html
-type nul >style.css
-type nul >script.js
-
-cls
-set text="Created 'main.html', 'style.css' and 'script.js' as a project setup."
-set text=%text:"=%
-ECHO %text%
-
-:: Open in VSCode
-cmd /c "code ."
-call :loading
-timeout /t 4 /nobreak > nul
+timeout /t 3 /nobreak > nul
 goto end
 
 
@@ -440,8 +438,9 @@ for /l %%G in (1,1,3) do (
 )
 
 :end
-::timeout /t 2 /nobreak > nul
+timeout /t 2 /nobreak > nul
 cls
+color 09
 ECHO Project successfully created!
 timeout /t 3 /nobreak > nul
 ECHO.
