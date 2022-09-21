@@ -71,8 +71,9 @@ ECHO %name1%
 
 :: Create directory and cd to it
 mkdir %name1%
-chdir C:\Users\thebe\Desktop\Codingstuff\C\%name1%
-
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\C\%name%
+chdir C:\Users\thebe\Desktop\Codingstuff\C\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >index.c
 cls
@@ -103,9 +104,12 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\C++\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\C++\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >index.cpp
+
 cls
 set text="Created 'index.cpp' as a project setup."
 set text=%text:"=%
@@ -134,10 +138,12 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\DJS\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
+
 :: Project setup
 type nul >bot.js
-
 
 cls
 cmd /c "npm init -y"
@@ -172,7 +178,9 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\Java\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\Java\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
 :: Project setup
 type nul >index.java
 
@@ -201,7 +209,10 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\Python\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\Python\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
+
 :: Project setup
 type nul >main.py
 cls
@@ -292,9 +303,10 @@ timeout /t 3 /nobreak > nul
 
 :: Project setup
 xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\nextTemplate C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
-xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\Next\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
+
 
 :: In steps, so if something breaks then it's possible to catch the error-causing depedencies
 cls
@@ -330,7 +342,11 @@ timeout /t 3 /nobreak > nul
 
 :: Project setup
 xcopy /Y /C /Q /E C:\Users\thebe\Desktop\Codingstuff\WebDev\React\template C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+copy /Y C:\Users\thebe\Desktop\Codingstuff\WebDev\workspace.code-workspace C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
 chdir C:\Users\thebe\Desktop\Codingstuff\WebDev\React\%name%
+rename "workspace.code-workspace" "%name%.code-workspace"
+
+:: Add INFO.md
 type nul > INFO.md
 (
 	ECHO Paste the following lines into package.json:
