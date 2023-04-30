@@ -296,7 +296,7 @@ ECHO %name%
 
 :: Create directory and cd to it
 mkdir %name%
-copy /Y C:\Users\thebe\OneDrive\Pulpit\Coding\templates\vanillaTemplate\workspace.code-workspace C:\Users\thebe\OneDrive\Pulpit\Coding\WebDev\Misc\%name%
+copy /Y C:\Users\thebe\OneDrive\Pulpit\Coding\templates C:\Users\thebe\OneDrive\Pulpit\Coding\WebDev\Misc\%name%
 chdir C:\Users\thebe\OneDrive\Pulpit\Coding\WebDev\Misc\%name%
 rename "workspace.code-workspace" "%name%.code-workspace"
 
