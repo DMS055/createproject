@@ -236,7 +236,8 @@ cls
 ECHO 1. FunStuff
 ECHO 2. Miscellaneous
 ECHO 3. Next (TS)
-ECHO 4. React (JS)
+ECHO 4. Next (JS)
+ECHO 5. React (JS)
 
 ECHO Select the subdirectory by typing in the corresponding number:
 set /p choice=
@@ -245,7 +246,8 @@ if not '%choice%'=='' set choice=%choice:~0,2%
 if '%choice%'=='1' goto FS
 if '%choice%'=='2' goto MS
 if '%choice%'=='3' goto NXTTS
-if '%choice%'=='4' goto RCT
+if '%choice%'=='4' goto NXTJS
+if '%choice%'=='5' goto RCT
 
 :: If proper syntax is not provided
 goto :WEB
